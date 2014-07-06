@@ -1,0 +1,29 @@
+.TITLE "ad8018 test"
+
+.INCLUDE ./models/ad8018.cir
+
+X8018 ni ii vss vdd vo AD8018
+
+VS vss vdd DC 7
+
+VGND vgnd vdd DC 1
+
+VIN ni vgnd DC 2.5 AC 1
+
+RL vo vgnd 25
+
+RF vo ii 7500
+RG ii v2v5 7500
+CP ii vgnd 4p
+CC ii cp 10p
+RC cp vo 10000
+VREF v2v5 vgnd DC 2.5
+
+.control
+pz ni vgnd vo vgnd vol pz
+print all
+ac dec 10 10 100meg
+plot vdb(vo,ni)
+plot phase(v(vo))
+.endc
+.end

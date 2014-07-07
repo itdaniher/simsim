@@ -4,19 +4,18 @@
 
 X4661 ni ii vss vdd vo ADA4661
 
-VS vss vdd DC 7
+VS vdd vss DC 7
+VGND vdd vgnd DC 1
 
-VGND vgnd vdd DC 1
+VIN vgnd ni DC 2.5 AC 1
 
-VIN ni vgnd DC 2.5 AC 1
-
-Rf vo ii 1
-
-Rl vo vgnd 1000
+Rf ii vo 100
+Rl vo vgnd 100
 
 .control
+tf v(vo,ni) vin
 print all
-ac dec 10 10 10meg
+ac dec 10 10 100meg
 plot vdb(vo,ni)
 plot phase(v(vo))
 .endc

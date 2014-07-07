@@ -1,0 +1,25 @@
+.TITLE "ad8210 test"
+
+.INCLUDE ./models/ad8210.cir
+
+X8210 ni vgnd v2v5 vo vdd v2v5 pi AD8210
+
+VS vgnd vdd DC 5
+
+VIN vgnd pi DC 2.5 AC 2.5
+
+VREF vgnd v2v5 DC 2.5
+
+Rref1 vgnd ni 1meg
+Rref2 vgnd pi 1meg
+
+Rs ni pi 0.5
+Rl1 v2v5 ni 25
+
+.control
+print all
+ac dec 10 10 10meg
+plot v(vo)
+plot phase(v(vo))
+.endc
+.end

@@ -1,0 +1,25 @@
+.TITLE "ad8606 test"
+
+.INCLUDE ./models/ad8606.cir
+
+X8606 ni ii vss vdd vo AD8606
+
+VS vss vdd DC 7
+
+VGND vgnd vdd DC 1
+
+VIN ni vgnd DC 2.5 AC 1
+
+Rf vo ii 1
+
+Rl1 vo vgnd 1000
+Rl2 ni vgnd 1gig
+Rl3 ii vgnd 1gig
+
+.control
+print all
+ac dec 10 10 10meg
+plot vdb(vo,ni)
+plot phase(v(vo))
+.endc
+.end

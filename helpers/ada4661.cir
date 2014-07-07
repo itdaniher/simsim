@@ -1,0 +1,23 @@
+.TITLE "ada4661 test"
+
+.INCLUDE ./models/ada4661.cir
+
+X4661 ni ii vss vdd vo ADA4661
+
+VS vss vdd DC 7
+
+VGND vgnd vdd DC 1
+
+VIN ni vgnd DC 2.5 AC 1
+
+Rf vo ii 1
+
+Rl vo vgnd 1000
+
+.control
+print all
+ac dec 10 10 10meg
+plot vdb(vo,ni)
+plot phase(v(vo))
+.endc
+.end

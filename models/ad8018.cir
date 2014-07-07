@@ -31,7 +31,7 @@
 *                   | | |  negative supply
 *                   | | |  |  output
 *                   | | |  |  |
-.subckt AD8018      3 2 7  4  1
+.SUBCKT AD8018      3 2 7  4  1
 
 ***** Input stage ********
 Q1         7 31 210 QN
@@ -118,10 +118,10 @@ L1         2751 1  1nH
 FSY         7 4 POLY(2) VSY1 VSY2 8.699E-3 1 1
 
 
-.model diode D (IS=10E-15)
-.model QN NPN (Is=2.57e-17 Bf=110 Vaf=100)
-.model QP PNP (Is=2.49e-17 Bf=93 Vaf=23.8)
-.ends
+.MODEL diode D (IS=10E-15)
+.MODEL QN NPN (Is=2.57e-17 Bf=110 Vaf=100)
+.MODEL QP PNP (Is=2.49e-17 Bf=93 Vaf=23.8)
+.ENDS
 
 
 
